@@ -1,0 +1,21 @@
+{
+  "name": "samuelnilsson-com",
+  "version": "1.0.0",
+  "description": "samuelnilsson.com",
+  "main": "index.html",
+  "scripts": {
+    "surge": "surge"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simphax/samuelnilsson-com.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/simphax/samuelnilsson-com/issues"
+  },
+  "homepage": "https://github.com/simphax/samuelnilsson-com#readme",
+  "devDependencies": {
+    "surge": "^0.20.1"
+  }
+}
