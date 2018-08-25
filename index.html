@@ -1,0 +1,279 @@
+<html>
+
+<head>
+    <title>Samuel Nilsson</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <style type="text/css">
+        html,
+        body {
+            font-size: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        header {
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 4rem;
+        }
+
+        section {
+            margin: 0 auto;
+            box-sizing: border-box;
+            max-width: 80rem;
+            position: relative;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 4rem;
+            font-size: 2rem;
+            font-family: 'Open Sans Condensed';
+            letter-spacing: 2rem;
+            border: 1px solid #888;
+            display: inline-block;
+            line-height: 2rem;
+            padding: 12rem 6rem 10rem 8rem;
+        }
+
+        h1 div {
+            margin-bottom: 2rem;
+        }
+
+        nav {
+            padding: 5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-right: 2rem;
+        }
+
+        nav ul li a {
+            font-size: 1.6rem;
+        }
+
+
+        .covers {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .covers__cover {
+            width: 100%;
+            margin-bottom: 4rem;
+        }
+
+        @media screen and (min-width: 70rem) {
+            .covers__cover {
+                width: calc(50% - 2rem);
+            }
+        }
+
+        .section {
+            position: absolute;
+            box-sizing: border-box;
+            width: 100%;
+            transition: 0.2s all;
+            padding: 0 4rem;
+            opacity: 1;
+            transform: translate3d(0);
+            transition-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+        }
+
+        .section_hide {
+            transform: scaleY(1.2) translateY(20vh);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            transition-timing-function: cubic-bezier(0.4, 0.0, 1, 1);
+        }
+
+        .section-text {
+            font-size: 1.6rem;
+            max-width: 60rem;
+            margin: 0 auto;
+        }
+
+        .record-info {
+            width: 400px;
+            background-color: #fff;
+        }
+
+        .record-info__right {
+            padding: 2.4rem;
+        }
+
+        .record-info-text {
+            font-size: 1.6rem;
+        }
+
+        @media screen and (min-width: 70rem) {
+            .record-info {
+                display: flex;
+                max-width: 120rem;
+                width: calc(100vw - 16rem);
+            }
+
+            .record-info__left {
+                width: 400px;
+            }
+
+            .record-info__right {
+                flex: 1;
+                padding: 2.4rem;
+            }
+        }
+
+        .lity-wrap {
+            overflow-y: scroll;
+        }
+
+        form {
+        }
+        input, textarea {
+            font-size: 1.6rem;
+            border: none;
+            border-bottom: 1px solid #222;
+            display: block;
+            width: 100%;
+            margin: 2rem 0;
+            padding: 1rem 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        button {
+            background: #222;
+            border: none;
+            color: #fff;
+            font-size: 1.4rem;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 1rem 2rem;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="#intro">
+            <h1>
+                <div>SAMUEL</div>
+                <div>NILSSON</div>
+            </h1>
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#discography">Discography</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="intro">
+        <div class="section">
+            <div class="section-text">
+                Tjena
+            </div>
+        </div>
+    </section>
+    <section id="discography">
+        <div class="section">
+            <div class="covers">
+                <div class="covers__cover">
+                    <a href="#inline" data-lity>
+                        <img src="img.png">
+                    </a>
+                    <div id="inline" class="lity-hide">
+                        <div class="record-info">
+                            <div class="record-info__left">
+                                <img src="img.png">
+                                <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="400" height="80" frameborder="0" allowtransparency="true"
+                                    allow="encrypted-media"></iframe>
+                            </div>
+                            <div class="record-info__right">
+                                <div class="record-info-text">
+                                    Hej hopp. Lorem ipsum dolor sti amet Hej hopp. Lorem ipsum dolor sti amet Hej hopp. Lorem ipsum dolor sti amet Hej hopp.
+                                    Lorem ipsum dolor sti amet Hej hopp. Lorem ipsum dolor sti amet Hej hopp. Lorem ipsum
+                                    dolor sti amet Hej hopp. Lorem ipsum dolor sti amet Hej hopp. Lorem ipsum dolor sti amet
+                                    Hej hopp. Lorem ipsum dolor sti amet Hej hopp. Lorem ipsum dolor sti amet Hej hopp. Lorem
+                                    ipsum dolor sti amet Hej hopp. Lorem ipsum dolor sti amet Hej hopp. Lorem ipsum dolor
+                                    sti amet Hej hopp. Lorem ipsum dolor sti amet Hej hopp. Lorem ipsum dolor sti amet Hej
+                                    hopp. Lorem ipsum dolor sti amet
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="covers__cover">
+                    <img src="img.png">
+                </div>
+                <div class="covers__cover">
+                    <img src="img.png">
+                </div>
+                <div class="covers__cover">
+                    <img src="img.png">
+                </div>
+                <div class="covers__cover">
+                    <img src="img.png">
+                </div>
+                <div class="covers__cover">
+                    <img src="img.png">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="section">
+            <div class="section-text">
+                Maila mig på samuel@samuelnilsson.com
+                <form method="POST" action="https://formspree.io/samuel@samuelnilsson.com">
+                    <input type="email" name="email" placeholder="Your email">
+                    <textarea name="message" placeholder="Your message" rows="5"></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+        $('section .section').addClass('section_hide');
+        $('#intro .section').removeClass('section_hide');
+        $("header a[href^='#']").each(function (i, elem) {
+            let linkedId = $(elem).attr('href').substr(1)
+            $(elem).click(function (event) {
+                $('section .section').addClass('section_hide');
+                $('#' + linkedId + ' .section').removeClass('section_hide');
+                event.preventDefault();
+            })
+        })
+    </script>
+</body>
+
+</html>
