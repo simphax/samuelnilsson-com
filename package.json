@@ -4,7 +4,7 @@
   "description": "samuelnilsson.com",
   "main": "index.html",
   "scripts": {
-    "publish": "surge . samuelnilsson.com"
+    "publish": "surge --domain samuelnilsson.com"
   },
   "repository": {
     "type": "git",
