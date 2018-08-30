@@ -11,6 +11,11 @@
             color: #222;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        * {
+            box-sizing: border-box;
         }
 
         img {
@@ -51,23 +56,25 @@
         h1 div {
             margin-bottom: 2rem;
         }
+
         h2 {
             text-align: left;
             margin: 0 auto;
             margin-top: 1rem;
-            font-size: 25px;
+            font-size: 2.5rem;
             font-family: 'Open Sans Condensed';
-            margin-bottom: 10px;
-            
+            margin-bottom: 1rem;
+
         }
 
         h3 {
             text-align: left;
-            font-size: 18px;
+            font-size: 1.8rem;
             font-family: 'Open Sans Condensed';
-            margin-top: 0px;
+            margin-top: 0;
             margin-bottom: 0%
         }
+
         nav {
             padding: 5rem;
         }
@@ -88,7 +95,19 @@
         }
 
         nav ul li a {
+            display: block;
             font-size: 1.6rem;
+            padding-top: 0;
+            padding-bottom: 0.2rem;
+            transition: 0.1s all;
+            border-bottom: 1px solid transparent;
+            transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        nav ul li a:hover {
+            padding-top: 0.2rem;
+            padding-bottom: 0;
+            border-bottom: 1px solid #888;
         }
 
 
@@ -110,7 +129,7 @@
         }
 
         .section {
-            position: absolute;
+            position: relative;
             box-sizing: border-box;
             width: 100%;
             transition: 0.2s all;
@@ -133,7 +152,7 @@
             max-width: 60rem;
             margin: 0 auto;
             text-align: center;
-            
+
         }
 
         .record-info {
@@ -148,15 +167,17 @@
         .record-info-text {
             font-size: 1.6rem;
         }
+
         .record-info__left {
-                background-color: black;
-            }
+            background-color: black;
+        }
 
         @media screen and (min-width: 70rem) {
             .record-info {
                 display: flex;
                 max-width: 120rem;
                 width: calc(100vw - 16rem);
+                flex-wrap: wrap;
             }
 
             .record-info__left {
@@ -167,15 +188,20 @@
                 flex: 1;
                 padding: 2.4rem;
             }
+            .record-info__bottom {
+                width: 100%;
+                padding: 0;
+            }
         }
 
         .lity-wrap {
             overflow-y: scroll;
         }
 
-        form {
-        }
-        input, textarea {
+        form {}
+
+        input,
+        textarea {
             font-size: 1.6rem;
             border: none;
             border-bottom: 1px solid #222;
@@ -185,6 +211,7 @@
             padding: 1rem 0;
             font-family: 'Courier New', Courier, monospace;
         }
+
         button {
             background: #222;
             border: none;
@@ -192,6 +219,91 @@
             font-size: 1.4rem;
             font-family: 'Courier New', Courier, monospace;
             padding: 1rem 2rem;
+        }
+
+        .embed-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        .embed-container iframe,
+        .embed-container object,
+        .embed-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        hr {
+            display: block;
+            text-align: left;
+            border: none;
+            padding: 1rem 0;
+        }
+
+        hr::after {
+            content: "";
+            display: inline-block;
+            width: 2rem;
+            border: none;
+            border-bottom: 2px solid #888;
+        }
+
+        .cover {
+            position: relative;
+            display: block;
+            overflow: hidden;
+        }
+
+        .cover__image {
+            transition: all 0.3s;
+            transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .cover:hover .cover__image {
+            transform: scale(1.03);
+        }
+
+        .cover__text {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Open Sans Condensed';
+            transition: all 0.2s ease-in-out;
+            text-align: center;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            line-height: 1.7em;
+        }
+
+        .cover:hover .cover__text {
+            opacity: 1;
+        }
+
+        main {
+            flex: 1;
+        }
+        footer {
+            text-align: center;
+            padding: 4rem 0 2rem;
+            color: #222;
+            font-size: 1.1rem;
+        }
+        footer a {
+            text-decoration: underline;
         }
     </style>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.css">
@@ -218,138 +330,163 @@
             </ul>
         </nav>
     </header>
-    <section id="intro">
-        <div class="section">
-            <div class="section-text">
-                Samuel Nilsson is a music producer, musician and songwriter in Gnarp, Sweden. 
+    <main>
+        <section id="intro">
+            <div class="section">
+                <div class="section-text">
+                    Samuel Nilsson is a music producer, musician and songwriter in Gnarp, Sweden.
+                </div>
             </div>
-        </div>
-    </section>
-    <section id="discography">
-        <div class="section">
-            <div class="covers">
-                <div class="covers__cover">
-                    <a href="#cover1" data-lity>
-                        <img src="Bilder/Clara.jpg">
-                    </a>
-                    <div id="cover1" class="lity-hide">
-                        <div class="record-info">
-                            <div class="record-info__left">
-                                <img src="Bilder/Clara.jpg">
-                        
-                            </div>
-                            <div class="record-info__right">
-                                <div class="record-info-text">
-                                        <h2> Clara Einarsson</h2> 
-                                        <h3>Something in the Water (Cover)</h3><hr width="20" align="left"><br>
-                                        2018<hr width="20" align="left"><br>
-                                     Producer, mixing engineer
+        </section>
+        <section id="discography">
+            <div class="section">
+                <div class="covers">
+                    <div class="covers__cover">
+                        <a class="cover" href="#cover1" data-lity>
+                            <img class="cover__image" src="Bilder/Clara.jpg">
+                            <span class="cover__text">
+                                <span>Clara Einarsson<br>Something</span>
+                            </span>
+                        </a>
+                        <div id="cover1" class="lity-hide">
+                            <div class="record-info">
+                                <div class="record-info__left">
+                                    <img src="Bilder/Clara.jpg">
 
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/EP3yuo_Y7fg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                </div>
+                                <div class="record-info__right">
+                                    <div class="record-info-text">
+                                        <h2> Clara Einarsson</h2>
+                                        <h3>Something in the Water (Cover)</h3>
+                                        <hr> 2018
+                                        <hr> Producer, mixing engineer
+                                    </div>
+                                </div>
+                                <div class="record-info__bottom">
+                                    <div class='embed-container'><iframe src='https://www.youtube.com/embed/EP3yuo_Y7fg?rel=0'
+                                            frameborder='0' allowfullscreen></iframe></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div><div class="covers__cover">
-                    <a href="#cover2" data-lity>
-                        <img src="Bilder/H&A.jpg">
-                    </a>
-                    <div id="cover2" class="lity-hide">
-                        <div class="record-info">
-                            <div class="record-info__left">
-                                <img src="Bilder/H&A.jpg">
-                                <iframe src="https://open.spotify.com/embed/album/6JjS0S6NarTNY5Hh7FtFVt" width="400" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                            </div>
-                            <div class="record-info__right">
-                                <div class="record-info-text">
-                                        <h2>Hanna & Alexandra</h2> 
-                                        <h3>Above</h3><hr width="20" align="left"><br>
-                                        2017<hr width="20" align="left"><br>
-                                     Producer, mixing engineer, bass player
+                    <div class="covers__cover">
+                        <a class="cover" href="#cover2" data-lity>
+                            <img class="cover__image" src="Bilder/H&A.jpg">
+                            <span class="cover__text">
+                                <span>Test<br>test</span>
+                            </span>
+                        </a>
+                        <div id="cover2" class="lity-hide">
+                            <div class="record-info">
+                                <div class="record-info__left">
+                                    <img src="Bilder/H&A.jpg">
+                                    <iframe src="https://open.spotify.com/embed/album/6JjS0S6NarTNY5Hh7FtFVt" width="400" height="80" frameborder="0" allowtransparency="true"
+                                        allow="encrypted-media"></iframe>
+                                </div>
+                                <div class="record-info__right">
+                                    <div class="record-info-text">
+                                        <h2>Hanna & Alexandra</h2>
+                                        <h3>Above</h3>
+                                        <hr> 2017
+                                        <hr> Producer, mixing engineer, bass player
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="covers__cover">
-                    <a href="#cover3" data-lity>
-                        <img src="Bilder/Jemima.jpg">
-                    </a>
-                    <div id="cover3" class="lity-hide">
-                        <div class="record-info">
-                            <div class="record-info__left">
-                                <img src="Bilder/Jemima.jpg">
-                                <iframe src="https://open.spotify.com/embed/album/1A43r4x8MkBbHVfwaPDuYE" width="400" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                            </div>
-                            <div class="record-info__right">
-                                <div class="record-info-text">
-                                   <h2> Jemima</h2> 
-                                       <h3>Work in Progress</h3><hr width="20" align="left"><br>
-                                       2017<hr width="20" align="left"><br>
-                                    Producer, mixing engineer, bass player
+                    <div class="covers__cover">
+                        <a class="cover" href="#cover3" data-lity>
+                            <img class="cover__image" src="Bilder/Jemima.jpg">
+                            <span class="cover__text">
+                                <span>Test<br>test</span>
+                            </span>
+                        </a>
+                        <div id="cover3" class="lity-hide">
+                            <div class="record-info">
+                                <div class="record-info__left">
+                                    <img src="Bilder/Jemima.jpg">
+                                    <iframe src="https://open.spotify.com/embed/album/1A43r4x8MkBbHVfwaPDuYE" width="400" height="80" frameborder="0" allowtransparency="true"
+                                        allow="encrypted-media"></iframe>
+                                </div>
+                                <div class="record-info__right">
+                                    <div class="record-info-text">
+                                        <h2> Jemima</h2>
+                                        <h3>Work in Progress</h3>
+                                        <hr> 2017
+                                        <hr> Producer, mixing engineer, bass player
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="covers__cover">
-                    <a href="#cover4" data-lity>
-                        <img src="Bilder/Lovsjung tillsammans.jpg">
-                    </a>
-                    <div id="cover4" class="lity-hide">
-                        <div class="record-info">
-                            <div class="record-info__left">
-                                <img src="Bilder/Lovsjung tillsammans.jpg">
-                                <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="400" height="80" frameborder="0" allowtransparency="true"
-                                    allow="encrypted-media"></iframe>
-                            </div>
-                            <div class="record-info__right">
-                                <div class="record-info-text">
-                                        <h2> David media</h2> 
-                                        <h3>Lovsjung tillsammans</h3><hr width="20" align="left"><br>
-                                        2017<hr width="20" align="left"><br>
-                                     Producer, mixing engineer
+                    <div class="covers__cover">
+                        <a class="cover" href="#cover4" data-lity>
+                            <img class="cover__image" src="Bilder/Lovsjung tillsammans.jpg">
+                            <span class="cover__text">
+                                <span>Test<br>test</span>
+                            </span>
+                        </a>
+                        <div id="cover4" class="lity-hide">
+                            <div class="record-info">
+                                <div class="record-info__left">
+                                    <img src="Bilder/Lovsjung tillsammans.jpg">
+                                    <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="400" height="80" frameborder="0" allowtransparency="true"
+                                        allow="encrypted-media"></iframe>
+                                </div>
+                                <div class="record-info__right">
+                                    <div class="record-info-text">
+                                        <h2> David media</h2>
+                                        <h3>Lovsjung tillsammans</h3>
+                                        <hr> 2017
+                                        <hr> Producer, mixing engineer
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="covers__cover">
-                    <a href="#cover5" data-lity>
-                        <img src="Bilder/Arise.jpg">
-                    </a>
-                    <div id="cover5" class="lity-hide">
-                        <div class="record-info">
-                            <div class="record-info__left">
-                                <img src="Bilder/Arise.jpg">
-                                <iframe src="https://open.spotify.com/embed/album/3sSMrh98SBrEKAjVQFM7yG" width="400" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                            </div>
-                            <div class="record-info__right">
-                                <div class="record-info-text">
-                                        <h2> NKC Worship</h2> 
-                                        <h3>Arise</h3><hr width="20" align="left"><br>
-                                        2016<hr width="20" align="left"><br>
-                                     Producer, mixing engineer, bass player
+                    <div class="covers__cover">
+                        <a class="cover" href="#cover5" data-lity>
+                            <img class="cover__image" src="Bilder/Arise.jpg">
+                            <span class="cover__text">
+                                <span>Test<br>test</span>
+                            </span>
+                        </a>
+                        <div id="cover5" class="lity-hide">
+                            <div class="record-info">
+                                <div class="record-info__left">
+                                    <img src="Bilder/Arise.jpg">
+                                    <iframe src="https://open.spotify.com/embed/album/3sSMrh98SBrEKAjVQFM7yG" width="400" height="80" frameborder="0" allowtransparency="true"
+                                        allow="encrypted-media"></iframe>
+                                </div>
+                                <div class="record-info__right">
+                                    <div class="record-info-text">
+                                        <h2> NKC Worship</h2>
+                                        <h3>Arise</h3>
+                                        <hr> 2016
+                                        <hr> Producer, mixing engineer, bass player
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="contact">
-        <div class="section">
-            <div class="section-text">
-                <form method="POST" action="https://formspree.io/samuel@samuelnilsson.com">
-                    <input type="email" name="email" placeholder="Your email">
-                    <textarea name="message" placeholder="Your message" rows="5"></textarea>
-                    <button type="submit">Send</button>
-                </form>
+        </section>
+        <section id="contact">
+            <div class="section">
+                <div class="section-text">
+                    <form method="POST" action="https://formspree.io/samuel@samuelnilsson.com">
+                        <input type="email" name="email" placeholder="Your email">
+                        <textarea name="message" placeholder="Your message" rows="5"></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
+    <footer>
+        © 2018 Samuel Nilsson | thank you <a href="http://simphax.com" target="_blank">Simphax</a> for the site
+    </footer>
     <script>
         $('section .section').addClass('section_hide');
         $('#intro .section').removeClass('section_hide');
