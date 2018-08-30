@@ -1,5 +1,5 @@
 Kör
 npm install
 sen
-npm run surge
+npm run publish
 Bilder storlek: 512x512
